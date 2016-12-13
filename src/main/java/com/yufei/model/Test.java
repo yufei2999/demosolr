@@ -1,5 +1,7 @@
 package com.yufei.model;
 
+import org.apache.solr.client.solrj.beans.Field;
+
 import java.util.Date;
 
 /**
@@ -7,16 +9,29 @@ import java.util.Date;
  */
 public class Test {
 
-    private int id;
+    @Field("id")
+    private Integer id;
+    @Field("title")
+    private String title;
+    @Field("content")
     private String content;
+    @Field("createTime")
     private Date createTime;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
@@ -39,6 +54,7 @@ public class Test {
     public String toString() {
         return "Test{" +
                 "id=" + id +
+                ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", createTime=" + createTime +
                 '}';

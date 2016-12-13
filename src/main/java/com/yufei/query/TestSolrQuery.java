@@ -8,6 +8,7 @@ import org.apache.solr.client.solrj.SolrQuery;
 public class TestSolrQuery extends SolrQuery {
     
     private int id;
+    private String title;
 
     public int getId() {
         return id;
@@ -17,12 +18,20 @@ public class TestSolrQuery extends SolrQuery {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public void setQuery(){
         StringBuffer sb = new StringBuffer();
-        sb.append("id:" + id);
-        /*if(StringUtils.isNotBlank(content)){
-            para.append(" AND content:" + content);
-        }*/
+        sb.append("title:" + title);
+        if(id != 0){
+            sb.append(" AND id:" + id);
+        }
         super.setQuery(sb.toString());
     }
 }
