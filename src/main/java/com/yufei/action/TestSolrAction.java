@@ -42,7 +42,7 @@ public class TestSolrAction {
             logger.info(list.toString());
             model.addAttribute("list", list);
         } catch (Exception e) {
-            logger.error("");
+            logger.error("test list error");
         }
         return "test";
     }
